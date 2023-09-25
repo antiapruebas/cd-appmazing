@@ -85,11 +85,12 @@
 						<configuration>
 							<mainClass>org.hsqldb.Server</mainClass>
 							<arguments>
-								<argument> -port-</argument>
-								<argument>3013</argument>
+								<argument>-port</argument>
+								<argument>9013</argument>
 								<argument>-database.0</argument>
-								<argument> -dbname.0</argument>
-								<argument>template08 </argument>
+								<argument>${hsqldatabase.path}/templateDB</argument>
+								<argument>-dbname.0</argument>
+								<argument>templateDB</argument>
 							</arguments>
 						</configuration>
 					</plugin>
