@@ -1,30 +1,25 @@
-package com.campusdual.appmazing.model;
+package com.campusdual.appmazing.model.dto;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity
-@Table(name = "PRODUCTS")
+public class ProductsDTO {
 
-public class Product {
-
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+
     private String name;
 
-    @Column
+
     private int stock;
 
-    @Column
+
     private BigDecimal price;
 
-    @Column
+
     private boolean active;
-    @Column
+
     private Date date_added;
 
     public int getId() {
@@ -75,5 +70,3 @@ public class Product {
         this.date_added = date_added;
     }
 }
-
-
