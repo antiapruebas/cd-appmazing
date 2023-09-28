@@ -5,6 +5,8 @@ import com.campusdual.appmazing.model.dto.ProductsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping ("/products")
 public class ProductController {
@@ -32,6 +34,21 @@ public class ProductController {
         return this.productService.queryProducts(product);
     }
 
+    @GetMapping (value="/getAll")
+    public List<ProductsDTO> queryAllProducts() {
+    return this.productService.queryAllProducts();
+    }
 
-
+@PostMapping (value="/add")
+public int insertProduct (@RequestBody ProductsDTO product) {
+        return this.productService.insertProduct(product);
+    }
+    @PutMapping (value="/update")
+    public int updateProduct (@RequestBody ProductsDTO product) {
+        return this.productService.updateProduct(product);
+}
+@DeleteMapping(value="/delete")
+public int deleteProduct (@RequestBody ProductsDTO product) {
+        return this.productService.deleteProduct(product);
+}
 }

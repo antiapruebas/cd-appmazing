@@ -6,7 +6,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "PRODUCTS")
-
 public class Products {
 
     @Id
