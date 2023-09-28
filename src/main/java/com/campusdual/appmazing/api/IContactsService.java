@@ -9,7 +9,7 @@ public interface IContactsService {
     ContactsDTO queryContacts(ContactsDTO product);
     List<ContactsDTO> queryAllContacts();
 
-    int insertProduct(ContactsDTO contact);
+    int insertContact(ContactsDTO contact);
     int updateContact(ContactsDTO contact);
 
     int deleteContact(ContactsDTO contact);

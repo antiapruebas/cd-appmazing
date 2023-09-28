@@ -12,7 +12,7 @@ import java.util.List;
 public interface ContactsMapper {
     ContactsMapper INSTANCE = Mappers.getMapper(ContactsMapper.class);
 
-    ContactsDTO contactsToContactDto(Contacts contacts);
+    ContactsDTO toDto(Contacts contacts);
     List<ContactsDTO> toDTOList(List<Contacts> contacts);
     Contacts  toEntity(ContactsDTO contactsDTO);
 }

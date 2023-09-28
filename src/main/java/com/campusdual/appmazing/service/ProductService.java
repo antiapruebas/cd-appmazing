@@ -13,33 +13,44 @@ import java.util.List;
 @Service("ProductService")
 @Lazy
 public class ProductService implements IProductService {
-@Autowired
-private ProductDao productDao;
+    @Autowired
+    private ProductDao productDao;
+
     @Override
     public ProductsDTO queryProducts(ProductsDTO productDTO) {
 
-       Products product = ProductsMapper.INSTANCE.toEntity(productDTO);
-       Products productFinal = this.productDao.getReferenceById(product.getId());
-       ProductsDTO dto = ProductsMapper.INSTANCE.toDto(productFinal);
-       return dto;
+        Products product = ProductsMapper.INSTANCE.toEntity(productDTO);
+        Products productFinal = this.productDao.getReferenceById(product.getId());
+        ProductsDTO dto = ProductsMapper.INSTANCE.toDto(productFinal);
+        return dto;
     }
+
     @Override
     public List<ProductsDTO> queryAllProducts() {
-        return null;
+        return ProductsMapper.INSTANCE.toDTOList(this.productDao.findAll());
+
     }
 
     @Override
-    public int insertProduct(ProductsDTO product) {
-        return 0;
+    public int insertProduct(ProductsDTO productDTO) {
+        Products product = ProductsMapper.INSTANCE.toEntity(productDTO);
+        Products product1 = this.productDao.saveAndFlush(product);
+        return product1.getId();
     }
 
     @Override
-    public int updateProduct(ProductsDTO product) {
-        return 0;
+    public int updateProduct(ProductsDTO productDTO) {
+        return this.insertProduct(productDTO);
     }
 
     @Override
-    public int deleteProduct(ProductsDTO product) {
-        return 0;
+    public int deleteProduct(ProductsDTO productDTO) {
+        int id = productDTO.getId();
+        Products product = ProductsMapper.INSTANCE.toEntity(productDTO);
+        productDao.delete(product);
+        return id;
     }
+
 }
+
+
