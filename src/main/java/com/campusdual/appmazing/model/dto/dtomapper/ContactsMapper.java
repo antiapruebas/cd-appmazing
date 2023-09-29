@@ -1,9 +1,9 @@
 package com.campusdual.appmazing.model.dto.dtomapper;
 
 import com.campusdual.appmazing.model.Contacts;
-import com.campusdual.appmazing.model.Products;
+
 import com.campusdual.appmazing.model.dto.ContactsDTO;
-import com.campusdual.appmazing.model.dto.ProductsDTO;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
