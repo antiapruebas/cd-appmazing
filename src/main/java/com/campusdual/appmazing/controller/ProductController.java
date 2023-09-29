@@ -1,5 +1,4 @@
 package com.campusdual.appmazing.controller;
-
 import com.campusdual.appmazing.api.IProductService;
 import com.campusdual.appmazing.model.dto.ProductsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    IProductService productService;
+    private  IProductService productService;
 
     @GetMapping
     public String testController() {
@@ -39,16 +38,16 @@ public class ProductController {
     return this.productService.queryAllProducts();
     }
 
-@PostMapping (value="/add")
-public int insertProduct (@RequestBody ProductsDTO product) {
+    @PostMapping (value="/add")
+    public int insertProduct (@RequestBody ProductsDTO product) {
         return this.productService.insertProduct(product);
     }
     @PutMapping (value="/update")
     public int updateProduct (@RequestBody ProductsDTO product) {
         return this.productService.updateProduct(product);
 }
-@DeleteMapping(value="/delete")
-public int deleteProduct (@RequestBody ProductsDTO product) {
+    @DeleteMapping(value="/delete")
+    public int deleteProduct (@RequestBody ProductsDTO product) {
         return this.productService.deleteProduct(product);
 }
 }
