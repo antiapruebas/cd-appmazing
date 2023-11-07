@@ -4,7 +4,9 @@ import com.campusdual.appmazing.model.dto.ProductsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping ("/products")
@@ -49,5 +51,41 @@ public class ProductController {
     @DeleteMapping(value="/delete")
     public int deleteProduct (@RequestBody ProductsDTO product) {
         return this.productService.deleteProduct(product);
-}
-}
+
+    }
+
+    @PutMapping(value="/buy5")
+    public int buyFiveProduct(@RequestBody ProductsDTO productDTO) {
+        return this.productService.buyProduct(productDTO,5);
+    }
+
+    @PostMapping(value="/totalBuy5")
+    public BigDecimal buyProduct(@RequestBody ProductsDTO productDTO) {
+        int  quantity =5;
+        this.productService.buyProduct(productDTO, quantity);
+        BigDecimal quantityBD = new BigDecimal(quantity);
+        return productService.totalPrice(productDTO, quantityBD);
+    }
+
+    @PostMapping (value="/buy")
+    public int buyProduct (@RequestBody Map<String, Integer> body ){
+        ProductsDTO product = new ProductsDTO();
+        int quantity =body.get("quantity");
+        product.setId(body.get("id"));
+        return this.productService.buyProduct(product, quantity);
+    }
+
+
+
+    /*
+    @PutMapping(value="/buy")
+    public BigDecimal buyProduct(@RequestBody ProductsDTO productDTO, @RequestBody int quantity) {
+         this.productService.buyProduct(productDTO, quantity);
+         BigDecimal quantityBD = new BigDecimal(quantity);
+         return productService.totalPrice(productDTO, quantityBD);*/
+    }
+
+
+
+
+

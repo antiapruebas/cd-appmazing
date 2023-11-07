@@ -26,6 +26,11 @@ public class Products {
     @Column
     private Date date_added;
 
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category_id;
+
     public int getId() {
         return id;
     }
@@ -72,6 +77,14 @@ public class Products {
 
     public void setDate_added(Date date_added) {
         this.date_added = date_added;
+    }
+
+    public Category getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(Category category_id) {
+        this.category_id = category_id;
     }
 }
 

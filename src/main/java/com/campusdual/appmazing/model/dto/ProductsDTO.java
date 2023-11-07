@@ -22,6 +22,8 @@ public class ProductsDTO {
 
     private Date date_added;
 
+    private CategoryDTO category_id;
+
     public int getId() {
         return id;
     }
@@ -68,5 +70,13 @@ public class ProductsDTO {
 
     public void setDate_added(Date date_added) {
         this.date_added = date_added;
+    }
+
+    public CategoryDTO getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(CategoryDTO category_id) {
+        this.category_id = category_id;
     }
 }
