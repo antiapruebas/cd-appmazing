@@ -346,7 +346,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":\"12\",\r\n   \"name\":\"Antia\",\r\n    \"surname\": \"Garrido\",\r\n    \"second_surname\": \"Cañas\",\r\n    \"phone\": \"654546633\",\r\n    \"email\":\"antia@miemail.es\"\r\n}",
+							"raw": "{\r\n    \"id\":\"\",\r\n   \"name\":\"\",\r\n    \"surname\": \"\",\r\n    \"second_surname\": \"\",\r\n    \"phone\": \"\",\r\n    \"email\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -389,6 +389,202 @@
 							"port": "30030",
 							"path": [
 								"contacts",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Test Controller -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30030/category",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Method Controller -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30030/category/testMethod",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
+								"testMethod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories-R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30030/category/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Controller -R",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Antía"
+						},
+						"url": {
+							"raw": "localhost:30030/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category -R",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/category/get",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Prepared food\"\r\n  \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/category/add",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5,\r\n   \"name\":\"Groceries\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/category/update",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category-D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/category/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"category",
 								"delete"
 							]
 						}
